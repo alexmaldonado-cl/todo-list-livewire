@@ -1,5 +1,5 @@
 <div>
-    <nav class=" bg-gray-300 w-full flex relative justify-between items-center mx-auto px-8 h-20">
+    <nav class="bg-gray-800 text-white w-full flex relative justify-between items-center mx-auto px-8 h-20">
         <!-- logo -->
         <div class="inline-flex">
             <a class="_o6689fn text-3xl font-bold" href="/">
@@ -61,6 +61,32 @@
             </div>
         </div>
     </div>
+
+    <div>
+
+        <div class="h-100 my-1 px-4 w-full flex items-center justify-center font-sans">
+            <div class="bg-gray-800 rounded-lg shadow py-4 px-4 w-full lg:w-3/4 lg:max-w-3xl">
+                <div>
+                    <div class="flex items-center">
+                        <p class="w-full text-white">Add another component to Tailwind Components</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="h-100 my-1 px-4 w-full flex items-center justify-center font-sans">
+            <div class="bg-gray-800 rounded-lg shadow py-4 px-4 w-full lg:w-3/4 lg:max-w-3xl">
+                <div>
+                    <div class="flex items-center">
+                        <p class="w-full text-white">Add another component to Tailwind Components</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
 
 
 
