@@ -44,11 +44,12 @@
         <div class="bg-gray-800 rounded-2xl shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-3xl">
             <div class="mb-4">
                 <div class="flex mt-4">
-                    <input class="shadow appearance-none border rounded-full w-full py-2 px-3 mr-4 text-grey-darker focus:outline-none" placeholder="Agregar una tarea">
+                    <input class="shadow appearance-none border rounded-full w-full py-2 px-3 mr-4 text-grey-darker focus:outline-none" placeholder="Agregar una tarea" wire:model="task">
 
 
 
                     <button
+                    wire:click="store()"
                     class="uppercase p-3 flex items-center p-0 w-12 h-12 max-w-max bg-gray-400 rounded-full hover:bg-yellow-500 active:shadow-lg mouse shadow transition ease-in duration-300 focus:outline-none">
               <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-6 h-6 inline-block">
                 <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
@@ -58,6 +59,9 @@
             </button>
 
                 </div>
+                @error('task')
+                    Hola {{$message}}
+                @enderror
             </div>
         </div>
     </div>
