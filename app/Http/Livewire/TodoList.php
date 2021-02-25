@@ -20,7 +20,10 @@ class TodoList extends Component
 
     public function render()
     {
-        return view('livewire.todo-list');
+        $todoListData = TodoModel::all();
+        return view('livewire.todo-list', [
+            'todoListData' => $todoListData
+        ]);
     }
 
     public function store()
@@ -33,6 +36,14 @@ class TodoList extends Component
         ]);
 
         $this->clearInputs();
+    }
+
+    public function changeStatus($task_id)
+    {
+        $task = TodoModel::find($task_id);
+        if (!$task) return;
+        $task->completed = !$task->completed;
+        $task->save();
     }
 
     public function clearInputs()
