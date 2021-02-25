@@ -62,6 +62,29 @@
         </div>
     </div>
 
+    <div>
 
+        <div class="h-100 my-1 px-4 w-full flex items-center justify-center font-sans">
+            <div class="bg-gray-800 rounded-lg shadow py-4 px-4 w-full lg:w-3/4 lg:max-w-3xl">
+                <div>
+                    <div class="flex items-center">
+                        <p class="w-full text-white">Add another component to Tailwind Components</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="h-100 my-1 px-4 w-full flex items-center justify-center font-sans">
+            <div class="bg-gray-800 rounded-lg shadow py-4 px-4 w-full lg:w-3/4 lg:max-w-3xl">
+                <div>
+                    <div class="flex items-center">
+                        <p class="w-full text-white">Add another component to Tailwind Components</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 
 </div>
