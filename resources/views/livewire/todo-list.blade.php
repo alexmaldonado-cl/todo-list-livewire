@@ -80,14 +80,14 @@
                     <div class="flex items-center">
                         <input class="rounded-2xl {{ $todo->completed == 1 ? 'completed' : '' }} bg-blue-600 h-6 w-6 mr-4" type="checkbox" name="completed" {{ $todo->completed == 1 ? 'checked' : '' }} id="completed" wire:click="changeStatus({{$todo->id}})">
                         <p class="w-full text-white {{ $todo->completed == 1 ? 'line-through' : '' }} ">{{$todo->task}}</p>
-                        <button
 
-                        class="uppercase p-2 flex items-center w-8 h-8 max-w-max bg-gray-400 rounded-full hover:bg-red-500 active:shadow-lg mouse shadow transition ease-in duration-300 focus:outline-none">
-                            <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-6 h-6 inline-block">
-                                <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
-                                                        C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399
-                                                        C15.952,9,16,9.447,16,10z" />
-                            </svg>
+
+                        <button
+                        wire:click="delete({{$todo->id}})"
+                        class="uppercase p-2 flex items-center w-8 h-8 max-w-max bg-gray-400 rounded-full hover:bg-red-500 active:shadow-lg mouse shadow transition ease-in duration-300 focus:outline-none" title="Eliminar">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 inline-block">
+                            <path fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
                         </button>
                     </div>
                 </div>

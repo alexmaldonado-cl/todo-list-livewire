@@ -46,6 +46,13 @@ class TodoList extends Component
         $task->save();
     }
 
+    public function delete($task_id)
+    {
+        $task = TodoModel::find($task_id);
+        if (!$task) return;
+        $task->delete();
+    }
+
     public function clearInputs()
     {
         $this->task = null;
