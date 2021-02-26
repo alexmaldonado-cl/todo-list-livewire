@@ -20,21 +20,20 @@ class TodoList extends Component
 
     public function render()
     {
-        $todoListData = TodoModel::all();
+        $todoListIncomplete = TodoModel::where('completed', 0)->get();
+        $todoListCompleted = TodoModel::where('completed', 1)->get();
         return view('livewire.todo-list', [
-            'todoListData' => $todoListData
+            'todoListIncomplete' => $todoListIncomplete,
+            'todoListCompleted'  => $todoListCompleted,
         ]);
     }
 
     public function store()
     {
-
         $this->validate($this->rules, $this->messages);
-
         TodoModel::create([
             'task' => $this->task
         ]);
-
         $this->clearInputs();
     }
 
