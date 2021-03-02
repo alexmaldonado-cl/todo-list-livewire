@@ -18,9 +18,14 @@ class TodoList extends Component
         'task.required' => 'Debe ingresar una tarea'
     ];
 
+    public $listeners                   = [
+        'destroy'                          => 'delete',
+    ];
+
+
     public function render()
     {
-        $todoListIncomplete = TodoModel::where('completed', 0)->get();
+        $todoListIncomplete = TodoModel::where('completed', 0)->orderBy('created_at', 'desc')->get();
         $todoListCompleted = TodoModel::where('completed', 1)->get();
         return view('livewire.todo-list', [
             'todoListIncomplete' => $todoListIncomplete,
