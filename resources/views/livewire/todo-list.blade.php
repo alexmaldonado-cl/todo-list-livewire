@@ -73,18 +73,18 @@
 
     <div>
 
-        @foreach ($todoListIncomplete as $todo)
+        @foreach ($todoListIncomplete as $todoIncomplete)
         <div class="h-100 my-1 px-4 w-full flex items-center justify-center font-sans">
             <div class="bg-gray-800 rounded-lg shadow py-4 px-4 w-full lg:w-3/4 lg:max-w-3xl">
                 <div>
                     <div class="flex items-center">
 
-                        <input class="rounded-2xl bg-blue-600 h-6 w-6 mr-4" type="checkbox" name="completed-{{$todo->id}}" id="completed-{{$todo->id}}" wire:click="changeStatus({{$todo->id}})">
+                        <input class="rounded-2xl bg-blue-600 h-6 w-6 mr-4" type="checkbox" name="completed-{{$todoIncomplete->id}}" id="completed-{{$todoIncomplete->id}}" wire:click="changeStatus({{$todoIncomplete->id}})">
 
-                        <p class="w-full text-white {{ $todo->completed == 1 ? 'line-through' : '' }} ">{{$todo->task}}</p>
+                        <p class="w-full text-white {{ $todoIncomplete->completed == 1 ? 'line-through' : '' }} ">{{$todoIncomplete->task}}</p>
 
                         <button
-                        wire:click="$emit('triggerDelete',{{ $todo->id }})"
+                        wire:click="$emit('triggerDelete',{{ $todoIncomplete->id }})"
                         class="uppercase p-2 flex items-center w-8 h-8 max-w-max bg-gray-400 rounded-full hover:bg-red-500 active:shadow-lg mouse shadow transition ease-in duration-300 focus:outline-none" title="Eliminar">
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 inline-block">
                             <path fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -122,12 +122,13 @@
                 <div class="bg-gray-800 rounded-lg shadow py-4 px-4 w-full lg:w-3/4 lg:max-w-3xl">
                     <div>
                         <div class="flex items-center">
-                            <input class="rounded-2xl {{ $todo->completed == 1 ? 'completed' : '' }} bg-blue-600 h-6 w-6 mr-4" type="checkbox" name="completed" {{ $todo->completed == 1 ? 'checked' : '' }} id="completed" wire:click="changeStatus({{$todo->id}})">
-                            <p class="w-full text-white {{ $todo->completed == 1 ? 'line-through' : '' }} ">{{$todo->task}}</p>
+
+                            <input class="rounded-2xl completed bg-blue-600 h-6 w-6 mr-4" type="checkbox" wire:click="changeStatus({{$todo->id}})">
+                            <p class="w-full text-white line-through">{{$todo->task}}</p>
 
 
                             <button
-                            wire:click="delete({{$todo->id}})"
+                            wire:click="$emit('triggerDelete',{{ $todo->id }})"
                             class="uppercase p-2 flex items-center w-8 h-8 max-w-max bg-gray-400 rounded-full hover:bg-red-500 active:shadow-lg mouse shadow transition ease-in duration-300 focus:outline-none" title="Eliminar">
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 inline-block">
                                 <path fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
