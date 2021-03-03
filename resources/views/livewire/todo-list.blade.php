@@ -123,7 +123,7 @@
                     <div>
                         <div class="flex items-center">
 
-                            <input class="rounded-2xl completed bg-blue-600 h-6 w-6 mr-4" type="checkbox" wire:click="changeStatus({{$todo->id}})">
+                            <input class="rounded-2xl completed bg-blue-600 h-6 w-6 mr-4" checked type="checkbox" wire:click="changeStatus({{$todo->id}})">
                             <p class="w-full text-white line-through">{{$todo->task}}</p>
 
 
