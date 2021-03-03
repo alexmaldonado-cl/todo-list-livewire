@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo List - Laravel - Livewire - MySQL</title>
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta name="description" content="Gestión de tareas recurrentes - Proyecto desarrollado con tecnologías: HTML, Tailwind, Livewire(JS), Laravel 8, Mysql.">
 
     @livewireStyles
